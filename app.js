@@ -30,5 +30,3 @@ const addUser = () => {
 
 // Start the app!
 initApp();
-
-// tester
