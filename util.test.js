@@ -28,4 +28,4 @@ test("should create an element with text and correct class", async () => {
 	await page.click("#btnAddUser");
 	const finalText = await page.$eval(".user-item", (el) => el.textContent);
 	expect(finalText).toBe("Anna (28 years old)");
-}, 10000);
+}, 20000);
