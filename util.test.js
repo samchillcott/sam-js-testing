@@ -25,5 +25,7 @@ test("should click around", async () => {
 	await page.type("input#name", "Anna");
 	await page.click("input#age");
 	await page.type("input#age", "32");
-	await page.click("");
-});
+	await page.click("#btnAddUser");
+	const finalText = await page.$eval(".user-item", (el) => el.textContent);
+	expect(finalText).toBe("Anna (32 years old)");
+}10000);
