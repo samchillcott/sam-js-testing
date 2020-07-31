@@ -2,13 +2,13 @@ const puppeteer = require("puppeteer");
 const { generateText, checkAndGenerate } = require("./util");
 
 test("should output name and age", () => {
-	const text = generateText("Sam", 41);
-	expect(text).toBe("Sam (41 years old)");
+	const text = generateText("Anna", 28);
+	expect(text).toBe("Anna (28 years old)");
 });
 
 test("should generate a valid text output", () => {
-	const text = checkAndGenerate("Sam", 41);
-	expect(text).toBe("Sam (41 years old)");
+	const text = checkAndGenerate("Anna", 28);
+	expect(text).toBe("Anna (28 years old)");
 });
 
 test("should create an element with text and correct class", async () => {
@@ -24,8 +24,8 @@ test("should create an element with text and correct class", async () => {
 	await page.click("input#name");
 	await page.type("input#name", "Anna");
 	await page.click("input#age");
-	await page.type("input#age", "32");
+	await page.type("input#age", "28");
 	await page.click("#btnAddUser");
 	const finalText = await page.$eval(".user-item", (el) => el.textContent);
-	expect(finalText).toBe("Anna (32 years old)");
+	expect(finalText).toBe("Anna (28 years old)");
 }, 10000);
