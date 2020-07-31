@@ -28,4 +28,4 @@ test("should click around", async () => {
 	await page.click("#btnAddUser");
 	const finalText = await page.$eval(".user-item", (el) => el.textContent);
 	expect(finalText).toBe("Anna (32 years old)");
-}10000);
+}, 10000);
