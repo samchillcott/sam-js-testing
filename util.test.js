@@ -21,4 +21,9 @@ test("should click around", async () => {
 	await page.goto(
 		"file:///Users/samchillcott/Desktop/DESK/CODE/GH Repos/js-testing-introduction/index.html"
 	);
+	await page.click("input#name");
+	await page.type("input#name", "Anna");
+	await page.click("input#age");
+	await page.type("input#age", "32");
+	await page.click("");
 });
