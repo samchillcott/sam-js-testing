@@ -11,14 +11,14 @@ test("should generate a valid text output", () => {
 	expect(text).toBe("Sam (41 years old)");
 });
 
-test("shoud click around", async () => {
+test("should click around", async () => {
 	const browser = await puppeteer.launch({
 		headless: false,
 		slowMo: 80,
-		args: ["--window-size=1920,1080"],
+		args: ["--window-size=1000,500"],
 	});
 	const page = await browser.newPage();
 	await page.goto(
-		"/Users/samchillcott/Desktop/DESK/CODE/GH Repos/js-testing-introduction/index.html"
+		"file:///Users/samchillcott/Desktop/DESK/CODE/GH Repos/js-testing-introduction/index.html"
 	);
 });
