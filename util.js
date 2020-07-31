@@ -30,7 +30,7 @@ exports.checkAndGenerate = (name, age) => {
 		!validateInput(name, true, false) ||
 		!validateInput(age, false, true)
 	) {
-		return;
+		return false;
   }
   return this.generateText(name, age);
 }
